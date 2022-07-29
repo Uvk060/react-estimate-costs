@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import Costs from "./components/Costs/Costs";
+import NewCost from "./components/NewCost/NewCost";
 
-function App() {
+const App = () => {
+  const costs = [
+    {
+      id: "c1",
+      date: new Date(2022, 2, 8),
+      description: "iphone",
+      amount: 999.99,
+    },
+    {
+      id: "c2",
+      date: new Date(2022, 2, 28),
+      description: "ipod generation 4",
+      amount: 111.11,
+    },
+    {
+      id: "c3",
+      date: new Date(2022, 5, 21),
+      description: "iMac Display",
+      amount: 1799.99,
+    },
+  ];
+  const addCostHandler = (cost) => {
+    console.log(cost);
+    console.log("app components");
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <NewCost onAddCost={addCostHandler} />
+      <Costs costs={costs} />
     </div>
   );
-}
+};
 
 export default App;
