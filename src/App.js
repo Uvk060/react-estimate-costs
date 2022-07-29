@@ -7,7 +7,7 @@ const App = () => {
       id: "c1",
       date: new Date(2022, 2, 8),
       description: "iphone",
-      amount: 999.99,
+      amount: 998.99,
     },
     {
       id: "c2",
